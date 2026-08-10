@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>CUNY Academic Works | Report an accessibility issue</title>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+	<link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400;600;700;800&display=swap" rel="stylesheet">
+	<link href="styles.css" rel="stylesheet">
+</head>
+<body>
+
+<div class="container" style="max-width: 720px;">
+	<a href="#feedback_form" class="visually-hidden-focusable">Skip to form</a>
+
+	<header class="d-flex align-items-center gap-3">
+		<img src="CUNY_Academic_Works_LOGO.png" alt="CUNY Academic Works logo" style="max-width: 120px;">
+		<h1 class="mb-0">Report an accessibility issue</h1>
+	</header>
+
+	<main>
+		<p>Please let us know if you encountered an accessibility barrier with a work in CUNY Academic Works.</p>
+
+		<iframe name="hidden_iframe" id="hidden_iframe" title="Form submission target" style="display:none;"></iframe>
+
+		<form action="https://docs.google.com/forms/d/17sn70LUIeLSwFEKA2GU5hRBMHqU2QfRbhkFNs7m693U/formResponse" method="POST" id="feedback_form" target="hidden_iframe" novalidate>
+
+			<div class="mb-3">
+				<label for="entry.1227287966" class="form-label fw-semibold">
+					Which work did you try to access?
+				</label>
+				<div class="form-hint mb-1">Please paste the link. If you don't have the link, include the title.</div>
+				<input type="text" class="form-control" id="entry.1227287966" name="entry.1227287966" required aria-describedby="work-error">
+				<div id="work-error" class="invalid-feedback">Please tell us which work you tried to access.</div>
+			</div>
+
+			<fieldset class="mb-3">
+				<legend class="form-label fw-semibold">What type of barrier did you encounter?</legend>
+				<p class="form-hint">Select all that apply.</p>
+				<div class="form-check">
+					<input class="form-check-input" type="checkbox" id="barrier_1" name="entry.1475934637" value="My screen reader or assistive technology does not work with this document">
+					<label class="form-check-label" for="barrier_1">My screen reader or assistive technology does not work with this document</label>
+				</div>
+				<div class="form-check">
+					<input class="form-check-input" type="checkbox" id="barrier_2" name="entry.1475934637" value="Images are not described">
+					<label class="form-check-label" for="barrier_2">Images are not described</label>
+				</div>
+				<div class="form-check">
+					<input class="form-check-input" type="checkbox" id="barrier_3" name="entry.1475934637" value="Text is hard to read (color or contrast)">
+					<label class="form-check-label" for="barrier_3">Text is hard to read (color or contrast)</label>
+				</div>
+				<div class="form-check">
+					<input class="form-check-input" type="checkbox" id="barrier_4" name="entry.1475934637" value="I cannot search or copy the text">
+					<label class="form-check-label" for="barrier_4">I cannot search or copy the text</label>
+				</div>
+				<div class="form-check">
+					<input class="form-check-input" type="checkbox" id="barrier_5" name="entry.1475934637" value="Headings, tables, or lists are not set up correctly">
+					<label class="form-check-label" for="barrier_5">Headings, tables, or lists are not set up correctly</label>
+				</div>
+				<div class="form-check">
+					<input class="form-check-input" type="checkbox" id="barrier_6" name="entry.1475934637" value="File format issue">
+					<label class="form-check-label" for="barrier_6">File format issue</label>
+				</div>
+				<div class="form-check">
+					<input class="form-check-input" type="checkbox" id="barrier_other" name="entry.1475934637" value="__other_option__">
+					<label class="form-check-label" for="barrier_other">
+						Other:
+						<input type="text" class="form-control form-control-sm d-inline-block w-auto ms-1" name="entry.1475934637.other_option_response" aria-label="Other barrier type">
+					</label>
+				</div>
+			</fieldset>
+
+			<div class="mb-3">
+				<label for="entry.1296118469" class="form-label fw-semibold">Please describe the issue you encountered.</label>
+				<div class="form-hint mb-1">Include where in the document the issue occurs, such as a page number, section, or table.</div>
+				<textarea class="form-control" id="entry.1296118469" name="entry.1296118469" rows="4" required aria-describedby="description-error"></textarea>
+				<div id="description-error" class="invalid-feedback">Please describe the issue.</div>
+			</div>
+
+			<div class="mb-3">
+				<label for="entry.797682015" class="form-label fw-semibold">
+					What computer, browser, or assistive technology were you using?
+				</label>
+				<div class="form-hint mb-1">For example: Windows 10, Chrome, JAWS, NVDA, VoiceOver.</div>
+				<input type="text" class="form-control" id="entry.797682015" name="entry.797682015" required aria-describedby="at-error">
+				<div id="at-error" class="invalid-feedback">Please tell us what you were using.</div>
+			</div>
+
+			<div class="mb-3">
+				<label for="entry.695254076" class="form-label fw-semibold">Name <span class="fw-normal form-hint">(optional)</span></label>
+				<input type="text" class="form-control" id="entry.695254076" name="entry.695254076">
+			</div>
+
+			<div class="mb-4">
+				<label for="entry.702336755" class="form-label fw-semibold">Email <span class="fw-normal form-hint">(optional)</span></label>
+				<div class="form-hint mb-1">Provide your email if you would like us to follow up with you.</div>
+				<input type="email" class="form-control" id="entry.702336755" name="entry.702336755">
+			</div>
+
+			<div class="position-absolute" style="left: -9999px;" aria-hidden="true">
+				<label for="website_url">Leave this blank</label>
+				<input type="text" id="website_url" name="website_url" tabindex="-1" autocomplete="off">
+			</div>
+
+			<button type="submit" class="btn btn-primary btn-lg w-100">Submit</button>
+		</form>
+	</main>
+
+	<footer>
+		<p><a href="https://academicworks.cuny.edu/">CUNY Academic Works</a> is a service of CUNY Libraries, coordinated by the <a href="https://www.cuny.edu/about/administration/offices/library-services/">Office of Library Services</a> of <a href="https://www.cuny.edu/">The City University of New York</a>.</p>
+	</footer>
+</div>
+
+<script>
+(function () {
+	var pageLoadTime = Date.now();
+
+	// Pre-fill the work field from URL parameters
+	function getParam(name) {
+		var params = new URLSearchParams(window.location.search);
+		return params.get(name);
+	}
+
+	var ref = getParam('ref');
+	var field = document.getElementById('entry.1227287966');
+	if (ref) {
+		field.value = ref.match(/^https?:\/\//) ? ref : 'https://academicworks.cuny.edu/' + ref;
+	} else if (document.referrer) {
+		field.value = document.referrer;
+	}
+
+	// Client-side validation with visible error messages
+	var form = document.getElementById('feedback_form');
+	form.addEventListener('submit', function (event) {
+		if (!form.checkValidity()) {
+			event.preventDefault();
+			event.stopPropagation();
+			form.classList.add('was-validated');
+			var firstInvalid = form.querySelector(':invalid');
+			if (firstInvalid) firstInvalid.focus();
+			return;
+		}
+		form.classList.add('was-validated');
+
+		var honeypot = document.getElementById('website_url');
+		var timeOnPage = (Date.now() - pageLoadTime) / 1000;
+		if (honeypot.value || timeOnPage < 5) {
+			event.preventDefault();
+			window.location = 'thanks-accessibility.html';
+			return;
+		}
+
+		setTimeout(function () { window.location = 'thanks-accessibility.html'; }, 500);
+	});
+})();
+</script>
+
+</body>
+</html>

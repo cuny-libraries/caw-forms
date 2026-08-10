@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>CUNY Academic Works | Submission Agreement</title>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+	<link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400;600;700;800&display=swap" rel="stylesheet">
+	<link href="styles.css" rel="stylesheet">
+</head>
+<body>
+
+<div class="container" style="max-width: 720px;">
+	<a href="#agreement_form" class="visually-hidden-focusable">Skip to form</a>
+
+	<header class="d-flex align-items-center gap-3">
+		<img src="CUNY_Academic_Works_LOGO.png" alt="CUNY Academic Works logo" style="max-width: 120px;">
+		<h1 class="mb-0">Submission Agreement</h1>
+	</header>
+
+	<main>
+		<p>Please complete this form to grant CUNY permission to make your work publicly available through <a href="https://academicworks.cuny.edu/">CUNY Academic Works</a>. All fields are required unless marked optional.</p>
+
+		<!--
+		  Entry IDs — from the pre-filled link (Form editor > ⋮ > Get pre-filled link):
+		     entry.1081683254   → "First Name" question
+		     entry.164963422    → "Last Name" question
+		     entry.619701435    → "CUNY Affiliation" question
+		     entry.1272378346   → "Email" question
+		     entry.366714702    → "Titles of Works" question
+		     entry.1045126699   → "I agree" question
+		-->
+
+		<iframe name="hidden_iframe" id="hidden_iframe" title="Form submission target" style="display:none;"></iframe>
+
+		<form action="https://docs.google.com/forms/d/e/1FAIpQLSeqtY0YXDIJ3FBTh1NnptO5mb5m_3YHeUTJyBB2c0VZYgOHuA/formResponse" method="POST" id="agreement_form" target="hidden_iframe" novalidate>
+
+			<div class="mb-3">
+				<label for="entry.1081683254" class="form-label fw-semibold">First name</label>
+				<input type="text" class="form-control" id="entry.1081683254" name="entry.1081683254" required autocomplete="given-name" aria-describedby="first-name-error">
+				<div id="first-name-error" class="invalid-feedback">Please enter your first name.</div>
+			</div>
+
+			<div class="mb-3">
+				<label for="entry.164963422" class="form-label fw-semibold">Last name</label>
+				<input type="text" class="form-control" id="entry.164963422" name="entry.164963422" required autocomplete="family-name" aria-describedby="last-name-error">
+				<div id="last-name-error" class="invalid-feedback">Please enter your last name.</div>
+			</div>
+
+			<div class="mb-3">
+				<label for="entry.619701435" class="form-label fw-semibold">CUNY affiliation</label>
+				<select class="form-select" id="entry.619701435" name="entry.619701435" required aria-describedby="affiliation-error">
+					<option value="">Select your campus</option>
+					<option value="bb">Baruch College</option>
+					<option value="bm">Borough of Manhattan Community College</option>
+					<option value="bx">Bronx Community College</option>
+					<option value="bc">Brooklyn College</option>
+					<option value="cc">The City College of New York</option>
+					<option value="si">College of Staten Island</option>
+					<option value="gj">Craig Newmark Graduate School of Journalism</option>
+					<option value="central">CUNY Central Office</option>
+					<option value="gc">CUNY Graduate Center</option>
+					<option value="sph">CUNY Graduate School of Public Health &amp; Health Policy</option>
+					<option value="slu">CUNY School of Labor and Urban Studies</option>
+					<option value="law">CUNY School of Law</option>
+					<option value="cm">CUNY School of Medicine</option>
+					<option value="sps">CUNY School of Professional Studies</option>
+					<option value="nc">Guttman Community College</option>
+					<option value="ho">Hostos Community College</option>
+					<option value="hc">Hunter College</option>
+					<option value="jj">John Jay College of Criminal Justice</option>
+					<option value="kb">Kingsborough Community College</option>
+					<option value="lg">LaGuardia Community College</option>
+					<option value="le">Lehman College</option>
+					<option value="me">Medgar Evers College</option>
+					<option value="ny">New York City College of Technology</option>
+					<option value="qc">Queens College</option>
+					<option value="qb">Queensborough Community College</option>
+					<option value="yc">York College</option>
+				</select>
+				<div id="affiliation-error" class="invalid-feedback">Please select your CUNY affiliation.</div>
+			</div>
+
+			<div class="mb-3">
+				<label for="entry.1272378346" class="form-label fw-semibold">Email</label>
+				<input type="email" class="form-control" id="entry.1272378346" name="entry.1272378346" required autocomplete="email" aria-describedby="email-error">
+				<div id="email-error" class="invalid-feedback">Please enter a valid email address.</div>
+			</div>
+
+			<fieldset class="mb-3">
+				<legend class="form-label fw-semibold">Titles of works you're submitting</legend>
+				<p class="form-hint">Please enter the exact title of each work. You must enter at least one. Use the button below to add more.</p>
+				<div id="titles-container">
+					<div class="mb-2" id="title-group-1">
+						<label for="title_1" class="visually-hidden">Title 1</label>
+						<input type="text" class="form-control" id="title_1" placeholder="Title 1" required aria-describedby="titles-error">
+					</div>
+					<div class="mb-2" id="title-group-2">
+						<label for="title_2" class="visually-hidden">Title 2 (optional)</label>
+						<input type="text" class="form-control" id="title_2" placeholder="Title 2 (optional)">
+					</div>
+					<div class="mb-2" id="title-group-3">
+						<label for="title_3" class="visually-hidden">Title 3 (optional)</label>
+						<input type="text" class="form-control" id="title_3" placeholder="Title 3 (optional)">
+					</div>
+				</div>
+				<div id="titles-error" class="invalid-feedback d-block" style="display: none !important;" aria-live="polite"></div>
+				<button type="button" class="btn btn-outline-secondary btn-sm mt-2" id="add-title">+ Add another title</button>
+				<!-- Receives the concatenated title list before submission to Google Forms -->
+				<input type="hidden" id="entry.366714702" name="entry.366714702" value="">
+			</fieldset>
+
+			<div class="agreement-text mb-3">
+				<h2>CUNY Academic Works — Submission Agreement</h2>
+				<p>By checking the box below, I grant the City University of New York non-exclusive right to make a digital copy of my submission ("the Work") publicly accessible over the Internet as part of CUNY Academic Works, or any successor initiative at CUNY. I understand that granting this right does not alter my copyright or other rights to the work that I might hold.</p>
+				<p>I warrant as follows:</p>
+				<ul>
+					<li>that I have the full power and authority to make this agreement;</li>
+					<li>that the Work does not infringe any copyright, nor violate any proprietary rights, nor contain any libelous matter, nor invade the privacy of any person or third party;</li>
+					<li>that no right in the Work has in any way been sold, mortgaged, or otherwise disposed of, and that the Work is free from all liens and claims.</li>
+				</ul>
+				<p>I understand that once a work is approved by the repository administrator, it may not be edited or removed.</p>
+				<p class="mb-0"><strong>NOTE:</strong> It is suggested that you print this page for your records.</p>
+			</div>
+
+			<div class="mb-4 form-check" id="agree-group">
+				<input type="checkbox" class="form-check-input" id="agree" required aria-describedby="agree-error">
+				<label class="form-check-label" for="agree">I have read and agree to the terms above.</label>
+				<div id="agree-error" class="invalid-feedback">You must agree to the terms to submit this form.</div>
+			</div>
+
+			<!-- Populated by JS on submit; stores agreement confirmation in Google Sheet -->
+			<input type="hidden" id="entry.1045126699" name="entry.1045126699" value="">
+
+			<div class="position-absolute" style="left: -9999px;" aria-hidden="true">
+				<label for="website_url">Leave this blank</label>
+				<input type="text" id="website_url" name="website_url" tabindex="-1" autocomplete="off">
+			</div>
+
+			<button type="submit" class="btn btn-primary btn-lg w-100">Submit</button>
+		</form>
+	</main>
+
+	<footer>
+		<p><a href="https://academicworks.cuny.edu/">CUNY Academic Works</a> is a service of CUNY Libraries, coordinated by the <a href="https://www.cuny.edu/about/administration/offices/library-services/">Office of Library Services</a> of <a href="https://www.cuny.edu/">The City University of New York</a>.</p>
+	</footer>
+</div>
+
+<script>
+(function () {
+	var pageLoadTime = Date.now();
+	var titleCount = 3;
+
+	// Add another title field
+	document.getElementById('add-title').addEventListener('click', function () {
+		titleCount++;
+		var container = document.getElementById('titles-container');
+		var div = document.createElement('div');
+		div.className = 'mb-2';
+		div.id = 'title-group-' + titleCount;
+		var label = document.createElement('label');
+		label.htmlFor = 'title_' + titleCount;
+		label.className = 'visually-hidden';
+		label.textContent = 'Title ' + titleCount + ' (optional)';
+		var input = document.createElement('input');
+		input.type = 'text';
+		input.className = 'form-control';
+		input.id = 'title_' + titleCount;
+		input.placeholder = 'Title ' + titleCount + ' (optional)';
+		div.appendChild(label);
+		div.appendChild(input);
+		container.appendChild(div);
+		input.focus();
+	});
+
+	// Collect all non-empty title values into the hidden entry field
+	function gatherTitles() {
+		var titles = [];
+		for (var i = 1; i <= titleCount; i++) {
+			var input = document.getElementById('title_' + i);
+			if (input && input.value.trim()) {
+				titles.push(input.value.trim());
+			}
+		}
+		document.getElementById('entry.366714702').value = titles.join('\n');
+	}
+
+	var form = document.getElementById('agreement_form');
+	form.addEventListener('submit', function (event) {
+		gatherTitles();
+
+		// Populate the hidden "I agree" field if checkbox is checked
+		var agreeCheckbox = document.getElementById('agree');
+		if (agreeCheckbox.checked) {
+			document.getElementById('entry.1045126699').value = 'I agree';
+		}
+
+		if (!form.checkValidity()) {
+			event.preventDefault();
+			event.stopPropagation();
+			form.classList.add('was-validated');
+			var firstInvalid = form.querySelector(':invalid');
+			if (firstInvalid) firstInvalid.focus();
+			return;
+		}
+		form.classList.add('was-validated');
+
+		var honeypot = document.getElementById('website_url');
+		var timeOnPage = (Date.now() - pageLoadTime) / 1000;
+		if (honeypot.value || timeOnPage < 5) {
+			event.preventDefault();
+			window.location = 'thanks-agreement.html';
+			return;
+		}
+
+		setTimeout(function () { window.location = 'thanks-agreement.html'; }, 500);
+	});
+})();
+</script>
+
+</body>
+</html>
