@@ -9,26 +9,26 @@ Routes by the faculty member's selected CUNY affiliation.
 | Campus | Coordinator(s) |
 |--------|---------------|
 | Baruch College | kimmy.szeto@baruch.cuny.edu, stephen.francoeur@baruch.cuny.edu |
-| Brooklyn College | bevans@brooklyn.cuny.edu |
 | Borough of Manhattan Community College | jamaral@bmcc.cuny.edu |
 | Bronx Community College | michael.kahn@bcc.cuny.edu |
+| Brooklyn College | bevans@brooklyn.cuny.edu |
 | The City College of New York | rrapp@ccny.cuny.edu |
-| CUNY School of Medicine | kangell@med.cuny.edu |
-| CUNY Graduate Center | academicworks@gc.cuny.edu |
+| College of Staten Island | Christina.Boyle@csi.cuny.edu |
 | Craig Newmark Graduate School of Journalism | tinamarie.vella@journalism.cuny.edu |
-| Hunter College | ifinkel@hunter.cuny.edu |
+| CUNY Graduate Center | academicworks@gc.cuny.edu |
+| CUNY Graduate School of Public Health & Health Policy | rosemary.farrell@sph.cuny.edu |
+| CUNY School of Medicine | kangell@med.cuny.edu |
+| CUNY School of Professional Studies | kimmy.szeto@baruch.cuny.edu, stephen.francoeur@baruch.cuny.edu |
+| Guttman Community College | meagan.lacy@guttman.cuny.edu |
 | Hostos Community College | jtang@hostos.cuny.edu |
+| Hunter College | ifinkel@hunter.cuny.edu |
 | John Jay College of Criminal Justice | kokamoto@jjay.cuny.edu |
 | Kingsborough Community College | Michael.Kirby@kbcc.cuny.edu |
-| Lehman College | Vanessa.ArceSenati@lehman.cuny.edu, michelle.ehrenpreis@lehman.cuny.edu |
 | LaGuardia Community College | ejardine@lagcc.cuny.edu |
-| Guttman Community College | meagan.lacy@guttman.cuny.edu |
+| Lehman College | Vanessa.ArceSenati@lehman.cuny.edu, michelle.ehrenpreis@lehman.cuny.edu |
 | New York City College of Technology | monica.berger11@citytech.cuny.edu |
-| Queensborough Community College | wblick@qcc.cuny.edu |
 | Queens College | leila.walker@qc.cuny.edu |
-| College of Staten Island | Christina.Boyle@csi.cuny.edu |
-| CUNY Graduate School of Public Health & Health Policy | rosemary.farrell@sph.cuny.edu |
-| CUNY School of Professional Studies | kimmy.szeto@baruch.cuny.edu, stephen.francoeur@baruch.cuny.edu |
+| Queensborough Community College | wblick@qcc.cuny.edu |
 | York College | jdiao@york.cuny.edu |
 
 Affiliations with no coordinator on file route to academicworks@cuny.edu only.
