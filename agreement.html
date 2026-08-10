@@ -200,7 +200,7 @@
 
 		var honeypot = document.getElementById('website_url');
 		var timeOnPage = (Date.now() - pageLoadTime) / 1000;
-		if (honeypot.value || timeOnPage < 5) {
+		if (honeypot.value || timeOnPage < 3) {
 			window.location = 'thanks-agreement.html';
 			return;
 		}
