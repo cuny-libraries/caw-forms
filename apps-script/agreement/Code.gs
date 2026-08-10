@@ -26,7 +26,7 @@ function sendFormByEmail(e) {
 		"qc":   "leila.walker@qc.cuny.edu",          // Queens College
 		"qb":   "wblick@qcc.cuny.edu",               // Queensborough Community College
 		"yc":   "jdiao@york.cuny.edu"                // York College
-		// co, slu, sl, me → default only (academicworks@cuny.edu); add entries here when coordinators are known
+		// al, cl, slu, me → default only (academicworks@cuny.edu); add entries here when coordinators are known
 	};
 
 	// Extract submission values.
