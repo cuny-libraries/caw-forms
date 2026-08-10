@@ -180,6 +180,7 @@
 
 	var form = document.getElementById('agreement_form');
 	form.addEventListener('submit', function (event) {
+		event.preventDefault();
 		gatherTitles();
 
 		// Populate the hidden "I agree" field if checkbox is checked
@@ -189,7 +190,6 @@
 		}
 
 		if (!form.checkValidity()) {
-			event.preventDefault();
 			event.stopPropagation();
 			form.classList.add('was-validated');
 			var firstInvalid = form.querySelector(':invalid');
@@ -201,11 +201,11 @@
 		var honeypot = document.getElementById('website_url');
 		var timeOnPage = (Date.now() - pageLoadTime) / 1000;
 		if (honeypot.value || timeOnPage < 5) {
-			event.preventDefault();
 			window.location = 'thanks-agreement.html';
 			return;
 		}
 
+		fetch(form.action, { method: 'POST', mode: 'no-cors', body: new FormData(form) });
 		setTimeout(function () { window.location = 'thanks-agreement.html'; }, 500);
 	});
 })();
