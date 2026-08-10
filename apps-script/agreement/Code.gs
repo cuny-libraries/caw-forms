@@ -103,7 +103,7 @@ function sendFormByEmail(e) {
 
 		var agreementText =
 			"CUNY Academic Works \u2014 Submission Agreement\n\n" +
-			"By submitting this form, I grant the City University of New York non-exclusive right to make a digital copy of my submission (\"the Work\") publicly accessible over the Internet as part of CUNY Academic Works, or any successor initiative at CUNY. I understand that granting this right does not alter my copyright or other rights to the work that I might hold.\n\n" +
+			"By submitting this form, I grant The City University of New York non-exclusive right to make a digital copy of my submission (\"the Work\") publicly accessible over the Internet as part of CUNY Academic Works, or any successor initiative at CUNY. I understand that granting this right does not alter my copyright or other rights to the work that I might hold.\n\n" +
 			"I warrant as follows:\n" +
 			"  \u2022 that I have the full power and authority to make this agreement;\n" +
 			"  \u2022 that the Work does not infringe any copyright, nor violate any proprietary rights, nor contain any libelous matter, nor invade the privacy of any person or third party;\n" +
