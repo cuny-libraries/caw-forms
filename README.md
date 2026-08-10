@@ -1,60 +1,125 @@
 # CUNY Academic Works Forms
 
-Web forms for [CUNY Academic Works](https://academicworks.cuny.edu/), an institutional repository hosted on Digital Commons. These static HTML pages are served from an Apache web server.
+Web forms for [CUNY Academic Works](https://academicworks.cuny.edu/), CUNY's
+open-access institutional repository. When someone submits a form, an email goes
+to the Office of Library Services and the appropriate campus IR coordinator.
 
-## Forms
+## The forms
 
-| File | Purpose |
-|------|---------|
-| `agreement.html` | Faculty submit an author agreement before depositing a work |
-| `benefit.html` | Readers share how open access to a work made a difference |
-| `accessibility.html` | Readers report an accessibility barrier with a work |
+| Form | Who uses it | What it does |
+|------|-------------|--------------|
+| `agreement.html` | Faculty | Signs an author agreement before depositing a work |
+| `benefit.html` | Readers | Shares how open access to a work made a difference |
+| `accessibility.html` | Readers | Reports an accessibility barrier with a work |
+
+Each form has a matching thank-you page (`thanks-agreement.html`, etc.) and is
+served from the CUNY OLS web server at `ols.cuny.edu/academicworks/`.
 
 ## How it works
 
-Forms submit to Google Forms via a hidden iframe, then redirect to the corresponding thank-you page. Client-side validation uses Bootstrap's `was-validated` pattern. Anti-spam protection uses a hidden honeypot field and a minimum 5-second time-on-page check; bots are silently redirected to the thank-you page.
+Forms submit to Google Forms using the browser's `fetch()` API, then redirect
+to the corresponding thank-you page after 500ms. Client-side validation uses
+Bootstrap's `was-validated` pattern. Anti-spam protection uses a hidden honeypot
+field and a minimum 3-second time-on-page check; bots are silently redirected to
+the thank-you page without submitting data.
 
-Each form's linked Google Sheet has an Apps Script that emails submissions to `academicworks@cuny.edu` and the appropriate campus IR coordinator:
+Each form is connected to a Google Sheet. When someone submits a form, a Google
+Apps Script reads the submission and emails it to `academicworks@cuny.edu` plus
+the campus IR coordinator for that submission:
 
-- **Agreement form** — routes by the faculty member's selected CUNY affiliation
-- **Benefit and accessibility forms** — routes by campus collection prefix in the work's URL (for example, `gc` in `academicworks.cuny.edu/gc_etds/1234`)
+- **Agreement form** — routes by the faculty member's selected CUNY campus
+- **Benefit and accessibility forms** — routes by the campus prefix in the
+  work's URL (for example, `gc` in `academicworks.cuny.edu/gc_etds/1234`)
 
-The agreement form also sends a confirmation copy to the faculty member's submitted email address.
+The agreement form also sends a confirmation copy to the faculty member.
 
-See [ROUTING.md](ROUTING.md) for the full coordinator routing tables. ROUTING.md is regenerated automatically whenever a `Code.gs` file is committed.
+See [ROUTING.md](ROUTING.md) for the full list of campuses and coordinator
+email addresses. ROUTING.md is regenerated automatically whenever a `Code.gs`
+file is committed.
 
-## Workflow
+## Setup
 
-### First-time server setup
+### 1. Clone the repository
+
+On your local machine:
 
 ```bash
 git clone https://github.com/cuny-libraries/caw-forms.git
 ```
 
-### Making changes
+On the server (first time only):
 
 ```bash
-# On your Mac: push changes to GitHub
-git add <files>
+cd /var/www/html/academicworks
+git clone https://github.com/cuny-libraries/caw-forms.git .
+```
+
+### 2. Install clasp (one time, local machine only)
+
+[clasp](https://github.com/google/clasp) is the command-line tool that deploys
+Apps Script files to Google. The server does not need it — clasp is only used
+from your local machine.
+
+From the repo root:
+
+```bash
+npm install       # installs clasp
+npx clasp login   # authenticate with your Google account
+```
+
+## Making changes
+
+### HTML form changes
+
+Edit the relevant file (`agreement.html`, `benefit.html`, `accessibility.html`,
+or a thank-you page) locally, then:
+
+```bash
+git add <filename>
 git commit -m "Describe what changed"
 git push
+```
 
-# On the server: pull changes to go live
+Then on the server:
+
+```bash
+cd /var/www/html/academicworks
 git pull
 ```
 
-### Apps Scripts
+### Apps Script changes (email routing, notification text)
 
-Scripts are deployed via [clasp](https://github.com/google/clasp). One-time setup:
+The script files in `apps-script/` control email routing and the content of
+notification emails. Edit them locally — do not edit directly in the Google
+Apps Script editor, so that changes are tracked in version control.
 
-```bash
-npm install        # installs clasp locally
-npx clasp login    # authenticate with Google
-```
-
-To push a script after editing:
+After committing a `Code.gs` change, the post-commit hook attempts to deploy
+it automatically via clasp. If that fails, deploy manually:
 
 ```bash
 cd apps-script/agreement   # or benefit / accessibility
 npx clasp push
 ```
+
+## Common tasks
+
+### Update a coordinator's email address
+
+1. Open the relevant `Code.gs` file in `apps-script/agreement/`, `benefit/`,
+   or `accessibility/`
+2. Find the campus in the `campusEmails` map and update the address
+3. Commit and push; clasp will deploy the script automatically
+
+### Add a coordinator for a campus currently routed to default
+
+1. Add an entry to `campusEmails` in the relevant `Code.gs`
+2. For the agreement form only, also add the campus to `campusNames`
+3. Commit and push
+
+### Edit the agreement or notification text
+
+For the **form page itself**, edit `agreement.html` and commit/push/pull on
+the server.
+
+For the **emails sent to coordinators or faculty**, edit the relevant `Code.gs`
+and commit/push (clasp deploys the script; no server pull needed).
