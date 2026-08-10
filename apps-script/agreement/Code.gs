@@ -89,7 +89,9 @@ function sendFormByEmail(e) {
 		"Campus: " + campusLabel + "\n\n" +
 		"This message was forwarded to you by the Office of Library Services. If you have questions, please email academicworks@cuny.edu.\n\n--\n\n";
 	for (var i in headers) {
-		message += headers[i] + ":\n\n" + (e.namedValues[headers[i]] || [""]).toString() + "\n\n--\n\n";
+		var value = (e.namedValues[headers[i]] || [""]).toString();
+		if (headers[i] === "CUNY Affiliation") { value = campusNames[value] || value; }
+		message += headers[i] + ":\n\n" + value + "\n\n--\n\n";
 	}
 
 	MailApp.sendEmail(recipients.join(","), emailSubject, message);
