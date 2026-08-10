@@ -35,16 +35,17 @@
 
 		<form action="https://docs.google.com/forms/d/e/1FAIpQLSeqtY0YXDIJ3FBTh1NnptO5mb5m_3YHeUTJyBB2c0VZYgOHuA/formResponse" method="POST" id="agreement_form" target="hidden_iframe" novalidate>
 
-			<div class="mb-3">
-				<label for="entry.1081683254" class="form-label fw-semibold">First name</label>
-				<input type="text" class="form-control" id="entry.1081683254" name="entry.1081683254" required autocomplete="given-name" aria-describedby="first-name-error">
-				<div id="first-name-error" class="invalid-feedback">Please enter your first name.</div>
-			</div>
-
-			<div class="mb-3">
-				<label for="entry.164963422" class="form-label fw-semibold">Last name</label>
-				<input type="text" class="form-control" id="entry.164963422" name="entry.164963422" required autocomplete="family-name" aria-describedby="last-name-error">
-				<div id="last-name-error" class="invalid-feedback">Please enter your last name.</div>
+			<div class="row g-2 mb-3">
+				<div class="col-md-6">
+					<label for="entry.1081683254" class="form-label fw-semibold">First name</label>
+					<input type="text" class="form-control" id="entry.1081683254" name="entry.1081683254" required autocomplete="given-name" aria-describedby="first-name-error">
+					<div id="first-name-error" class="invalid-feedback">Please enter your first name.</div>
+				</div>
+				<div class="col-md-6">
+					<label for="entry.164963422" class="form-label fw-semibold">Last name</label>
+					<input type="text" class="form-control" id="entry.164963422" name="entry.164963422" required autocomplete="family-name" aria-describedby="last-name-error">
+					<div id="last-name-error" class="invalid-feedback">Please enter your last name.</div>
+				</div>
 			</div>
 
 			<div class="mb-3">
@@ -89,22 +90,14 @@
 
 			<fieldset class="mb-3">
 				<legend class="form-label fw-semibold">Titles of works you're submitting</legend>
-				<p class="form-hint">Please enter the exact title of each work. You must enter at least one. Use the button below to add more.</p>
+				<p class="form-hint">Please enter the exact title of each work. Use the button below to add more.</p>
 				<div id="titles-container">
 					<div class="mb-2" id="title-group-1">
-						<label for="title_1" class="visually-hidden">Title 1</label>
-						<input type="text" class="form-control" id="title_1" placeholder="Title 1" required aria-describedby="titles-error">
-					</div>
-					<div class="mb-2" id="title-group-2">
-						<label for="title_2" class="visually-hidden">Title 2 (optional)</label>
-						<input type="text" class="form-control" id="title_2" placeholder="Title 2 (optional)">
-					</div>
-					<div class="mb-2" id="title-group-3">
-						<label for="title_3" class="visually-hidden">Title 3 (optional)</label>
-						<input type="text" class="form-control" id="title_3" placeholder="Title 3 (optional)">
+						<label for="title_1" class="visually-hidden">Title</label>
+						<input type="text" class="form-control" id="title_1" required aria-describedby="title-1-error">
+						<div id="title-1-error" class="invalid-feedback">Please enter at least one title.</div>
 					</div>
 				</div>
-				<div id="titles-error" class="invalid-feedback d-block" style="display: none !important;" aria-live="polite"></div>
 				<button type="button" class="btn btn-outline-secondary btn-sm mt-2" id="add-title">+ Add another title</button>
 				<!-- Receives the concatenated title list before submission to Google Forms -->
 				<input type="hidden" id="entry.366714702" name="entry.366714702" value="">
@@ -149,7 +142,7 @@
 <script>
 (function () {
 	var pageLoadTime = Date.now();
-	var titleCount = 3;
+	var titleCount = 1;
 
 	// Add another title field
 	document.getElementById('add-title').addEventListener('click', function () {
