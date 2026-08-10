@@ -35,18 +35,21 @@
 
 		<form action="https://docs.google.com/forms/d/e/1FAIpQLSeqtY0YXDIJ3FBTh1NnptO5mb5m_3YHeUTJyBB2c0VZYgOHuA/formResponse" method="POST" id="agreement_form" target="hidden_iframe" novalidate>
 
-			<div class="row g-2 mb-3">
-				<div class="col-md-6">
-					<label for="entry.1081683254" class="form-label fw-semibold">First name</label>
-					<input type="text" class="form-control" id="entry.1081683254" name="entry.1081683254" required autocomplete="given-name" aria-describedby="first-name-error">
-					<div id="first-name-error" class="invalid-feedback">Please enter your first name.</div>
+			<fieldset class="mb-3">
+				<legend class="form-label fw-semibold">Name</legend>
+				<div class="row g-2">
+					<div class="col-md-6">
+						<label for="entry.1081683254" class="form-label">First name</label>
+						<input type="text" class="form-control" id="entry.1081683254" name="entry.1081683254" required autocomplete="given-name" aria-describedby="first-name-error">
+						<div id="first-name-error" class="invalid-feedback">Please enter your first name.</div>
+					</div>
+					<div class="col-md-6">
+						<label for="entry.164963422" class="form-label">Last name</label>
+						<input type="text" class="form-control" id="entry.164963422" name="entry.164963422" required autocomplete="family-name" aria-describedby="last-name-error">
+						<div id="last-name-error" class="invalid-feedback">Please enter your last name.</div>
+					</div>
 				</div>
-				<div class="col-md-6">
-					<label for="entry.164963422" class="form-label fw-semibold">Last name</label>
-					<input type="text" class="form-control" id="entry.164963422" name="entry.164963422" required autocomplete="family-name" aria-describedby="last-name-error">
-					<div id="last-name-error" class="invalid-feedback">Please enter your last name.</div>
-				</div>
-			</div>
+			</fieldset>
 
 			<div class="mb-3">
 				<label for="entry.619701435" class="form-label fw-semibold">CUNY affiliation</label>
