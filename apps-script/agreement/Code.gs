@@ -86,7 +86,6 @@ function sendFormByEmail(e) {
 	var s = SpreadsheetApp.getActive().getSheetByName("Form Responses 1");
 	var headers = s.getRange(1, 1, 1, s.getLastColumn()).getValues()[0];
 	var message = firstName + " " + lastName + " has submitted an author agreement for deposit to CUNY Academic Works.\n\n" +
-		"Campus: " + campusLabel + "\n\n" +
 		"This message was forwarded to you by the Office of Library Services. If you have questions, please email academicworks@cuny.edu.\n\n--\n\n";
 	for (var i in headers) {
 		var value = (e.namedValues[headers[i]] || [""]).toString();
