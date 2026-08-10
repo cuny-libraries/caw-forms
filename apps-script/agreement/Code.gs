@@ -1,32 +1,32 @@
 function sendFormByEmail(e) {
 	var defaultEmail = "academicworks@cuny.edu";
 
-	// Map campus codes (sent by the affiliation <select>) to IR coordinator emails.
-	// Codes match the option values in index.html.
+	// Maps the full campus name (as submitted by the affiliation dropdown) to coordinator email(s).
+	// Values must match the Google Form dropdown option text exactly.
 	var campusEmails = {
-		"bb":      ["kimmy.szeto@baruch.cuny.edu", "stephen.francoeur@baruch.cuny.edu"], // Baruch College
-		"bc":      "bevans@brooklyn.cuny.edu",          // Brooklyn College
-		"bm":      "jamaral@bmcc.cuny.edu",             // Borough of Manhattan Community College
-		"bx":      "michael.kahn@bcc.cuny.edu",         // Bronx Community College
-		"cc":      "rrapp@ccny.cuny.edu",               // The City College of New York
-		"cm":      "kangell@med.cuny.edu",              // CUNY School of Medicine
-		"gc":      "academicworks@gc.cuny.edu",         // CUNY Graduate Center
-		"gj":      "tinamarie.vella@journalism.cuny.edu", // Craig Newmark Graduate School of Journalism
-		"hc":      "ifinkel@hunter.cuny.edu",           // Hunter College
-		"ho":      "jtang@hostos.cuny.edu",             // Hostos Community College
-		"jj":      "kokamoto@jjay.cuny.edu",            // John Jay College of Criminal Justice
-		"kb":      "Michael.Kirby@kbcc.cuny.edu",       // Kingsborough Community College
-		"le":      ["Vanessa.ArceSenati@lehman.cuny.edu", "michelle.ehrenpreis@lehman.cuny.edu"], // Lehman College
-		"lg":      "ejardine@lagcc.cuny.edu",           // LaGuardia Community College
-		"nc":      "meagan.lacy@guttman.cuny.edu",      // Guttman Community College
-		"ny":      "monica.berger11@citytech.cuny.edu", // New York City College of Technology
-		"qb":      "wblick@qcc.cuny.edu",               // Queensborough Community College
-		"qc":      "leila.walker@qc.cuny.edu",          // Queens College
-		"si":      "Christina.Boyle@csi.cuny.edu",      // College of Staten Island
-		"sph":     "rosemary.farrell@sph.cuny.edu",     // CUNY Graduate School of Public Health & Health Policy
-		"sps":     ["kimmy.szeto@baruch.cuny.edu", "stephen.francoeur@baruch.cuny.edu"], // CUNY School of Professional Studies
-		"yc":      "jdiao@york.cuny.edu"                // York College
-		// central, law, me, slu → default (academicworks@cuny.edu); add coordinator emails here when known
+		"bb":   ["kimmy.szeto@baruch.cuny.edu", "stephen.francoeur@baruch.cuny.edu"],  // Baruch College
+		"bm":   "jamaral@bmcc.cuny.edu",            // Borough of Manhattan Community College
+		"bx":   "michael.kahn@bcc.cuny.edu",        // Bronx Community College
+		"bc":   "bevans@brooklyn.cuny.edu",          // Brooklyn College
+		"cc":   "rrapp@ccny.cuny.edu",               // The City College of New York
+		"si":   "Christina.Boyle@csi.cuny.edu",      // College of Staten Island
+		"gj":   "tinamarie.vella@journalism.cuny.edu", // Craig Newmark Graduate School of Journalism
+		"gc":   "academicworks@gc.cuny.edu",         // CUNY Graduate Center
+		"sph":  "rosemary.farrell@sph.cuny.edu",     // CUNY Graduate School of Public Health & Health Policy
+		"cm":   "kangell@med.cuny.edu",              // CUNY School of Medicine
+		"sps":  ["kimmy.szeto@baruch.cuny.edu", "stephen.francoeur@baruch.cuny.edu"],  // CUNY School of Professional Studies
+		"nc":   "meagan.lacy@guttman.cuny.edu",      // Guttman Community College
+		"ho":   "jtang@hostos.cuny.edu",             // Hostos Community College
+		"hc":   "ifinkel@hunter.cuny.edu",           // Hunter College
+		"jj":   "kokamoto@jjay.cuny.edu",            // John Jay College of Criminal Justice
+		"kb":   "Michael.Kirby@kbcc.cuny.edu",       // Kingsborough Community College
+		"lg":   "ejardine@lagcc.cuny.edu",           // LaGuardia Community College
+		"le":   ["Vanessa.ArceSenati@lehman.cuny.edu", "michelle.ehrenpreis@lehman.cuny.edu"],  // Lehman College
+		"ny":   "monica.berger11@citytech.cuny.edu", // New York City College of Technology
+		"qc":   "leila.walker@qc.cuny.edu",          // Queens College
+		"qb":   "wblick@qcc.cuny.edu",               // Queensborough Community College
+		"yc":   "jdiao@york.cuny.edu"                // York College
+		// co, slu, sl, me → default only (academicworks@cuny.edu); add entries here when coordinators are known
 	};
 
 	// Extract submission values.
