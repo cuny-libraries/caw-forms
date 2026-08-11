@@ -12,5 +12,12 @@
 		}
 	});
 
-	document.currentScript.parentNode.replaceChild(iframe, document.currentScript);
+	// document.currentScript is null when the script is deferred/async
+	var scriptEl = document.currentScript ||
+		document.querySelector('script[src*="agreement-embed"]');
+	if (scriptEl) {
+		scriptEl.parentNode.replaceChild(iframe, scriptEl);
+	} else {
+		document.body.appendChild(iframe);
+	}
 })();
