@@ -110,6 +110,7 @@ function sendFormByEmail(e) {
 			"  \u2022 that I have the full power and authority to make this agreement;\n" +
 			"  \u2022 that the Work does not infringe any copyright, nor violate any proprietary rights, nor contain any libelous matter, nor invade the privacy of any person or third party;\n" +
 			"  \u2022 that no right in the Work has in any way been sold, mortgaged, or otherwise disposed of, and that the Work is free from all liens and claims.\n\n" +
+			"I understand that in order to comply with federal ADA Title II requirements, New York State Information Technology Policy NYS-P08-005, and CUNY policies and protocols, the Work must comply with the WCAG 2.1, Level AA standard of accessible web content, and that in order to assist CUNY with meeting these requirements, CUNY asks me to conduct a baseline digital accessibility check of the Work prior to submission.\n\n" +
 			"I understand that once a work is approved by the repository administrator, it may not be edited or removed.";
 
 		var confirmSubject = "Your CUNY Academic Works submission agreement";
@@ -121,11 +122,11 @@ function sendFormByEmail(e) {
 			"CUNY Affiliation: " + campusLabel + "\n" +
 			"Email: " + facultyEmail + "\n\n" +
 			"Works covered by this agreement:\n" + titleList + "\n\n" +
-			(agreementCheck     ? "Agreement confirmed: "          + agreementCheck     + "\n\n" : "") +
-			(accessibilityCheck ? "Accessibility check confirmed: " + accessibilityCheck + "\n\n" : "") +
 			"--\n\n" +
 			agreementText + "\n\n" +
 			"--\n\n" +
+			(agreementCheck     ? "Agreement confirmed: "           + agreementCheck     + "\n\n" : "") +
+			(accessibilityCheck ? "Accessibility check confirmed: " + accessibilityCheck + "\n\n" : "") +
 			"It is suggested that you save or print this email for your records.\n\n" +
 			"If you have any questions, please contact academicworks@cuny.edu.";
 
