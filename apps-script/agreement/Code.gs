@@ -66,7 +66,7 @@ function sendFormByEmail(e) {
 	var affiliation  = (e.namedValues["CUNY Affiliation"] || [""])[0].trim();
 	var facultyEmail = (e.namedValues["Email"]            || [""])[0].trim();
 	var titles       = (e.namedValues["Titles of Works"]  || [""])[0].trim();
-	var agreementCheck     = (e.namedValues["Agreement to terms"]  || [""])[0].trim();
+	var agreementCheck     = (e.namedValues["Agreement to Terms"]  || [""])[0].trim();
 	var accessibilityCheck = (e.namedValues["Accessibility Check"] || [""])[0].trim();
 
 	var campusLabel = campusNames[affiliation] || affiliation;
