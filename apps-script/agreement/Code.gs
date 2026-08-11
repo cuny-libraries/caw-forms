@@ -127,6 +127,7 @@ function sendFormByEmail(e) {
 			"--\n\n" +
 			(agreementCheck     ? "Agreement confirmed: "           + agreementCheck     + "\n\n" : "") +
 			(accessibilityCheck ? "Accessibility check confirmed: " + accessibilityCheck + "\n\n" : "") +
+			"--\n\n" +
 			"It is suggested that you save or print this email for your records.\n\n" +
 			"If you have any questions, please contact academicworks@cuny.edu.";
 
