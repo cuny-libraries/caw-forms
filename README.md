@@ -37,6 +37,28 @@ See [ROUTING.md](ROUTING.md) for the full list of campuses and coordinator
 email addresses. ROUTING.md is regenerated automatically whenever a `Code.gs`
 file is committed.
 
+## Embedding the agreement form
+
+The agreement form can be embedded in a third-party CMS (such as the
+`academicworks.cuny.edu` site) using a single script tag:
+
+```html
+<script src="https://cuny-libraries.github.io/caw-forms/agreement-embed.js"></script>
+```
+
+This script creates an iframe pointing to the GitHub Pages version of the form
+and auto-resizes it as the user interacts with it. The form detects the `?embed=1`
+URL parameter and shows a simplified header — just the page title, no logo or
+border — and hides the footer.
+
+The form is served from **GitHub Pages** (`cuny-libraries.github.io/caw-forms/`)
+for embedding rather than from `ols.cuny.edu`, because some browsers block
+requests from public sites to servers on private IP ranges. GitHub Pages has a
+public IP and is not subject to this restriction.
+
+No separate maintenance is needed: pushing to `main` updates both the
+`ols.cuny.edu` server (via `git pull`) and GitHub Pages (automatically).
+
 ## Setup
 
 ### 1. Clone the repository
