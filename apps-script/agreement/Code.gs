@@ -66,6 +66,7 @@ function sendFormByEmail(e) {
 	var affiliation  = (e.namedValues["CUNY Affiliation"] || [""])[0].trim();
 	var facultyEmail = (e.namedValues["Email"]            || [""])[0].trim();
 	var titles       = (e.namedValues["Titles of Works"]  || [""])[0].trim();
+	var agreementCheck     = (e.namedValues["Agreement to terms"]  || [""])[0].trim();
 	var accessibilityCheck = (e.namedValues["Accessibility Check"] || [""])[0].trim();
 
 	var campusLabel = campusNames[affiliation] || affiliation;
@@ -120,6 +121,7 @@ function sendFormByEmail(e) {
 			"CUNY Affiliation: " + campusLabel + "\n" +
 			"Email: " + facultyEmail + "\n\n" +
 			"Works covered by this agreement:\n" + titleList + "\n\n" +
+			(agreementCheck     ? "Agreement confirmed: "          + agreementCheck     + "\n\n" : "") +
 			(accessibilityCheck ? "Accessibility check confirmed: " + accessibilityCheck + "\n\n" : "") +
 			"--\n\n" +
 			agreementText + "\n\n" +
