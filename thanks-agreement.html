@@ -29,9 +29,15 @@
 
 <script>
 if (/[?&]embed=1/.test(location.search)) {
-	var style = document.createElement('style');
-	style.textContent = 'header, footer { display: none !important; } .container { padding-top: 0 !important; }';
-	document.head.appendChild(style);
+	var headerEl = document.querySelector('header');
+	headerEl.querySelector('img').style.setProperty('display', 'none', 'important');
+	headerEl.style.setProperty('border-bottom', 'none', 'important');
+	headerEl.style.setProperty('padding-bottom', '0.5rem', 'important');
+	headerEl.style.setProperty('margin-bottom', '1rem', 'important');
+	document.querySelector('footer').style.setProperty('display', 'none', 'important');
+	document.querySelector('.container').style.setProperty('padding-top', '0', 'important');
+	var returnLink = document.querySelector('a[href="https://academicworks.cuny.edu/"]');
+	if (returnLink) returnLink.parentElement.style.display = 'none';
 	window.parent.postMessage({ cawIframeHeight: document.documentElement.scrollHeight }, '*');
 }
 </script>

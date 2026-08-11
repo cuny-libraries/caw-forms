@@ -160,9 +160,13 @@
 	var titleCount = 1;
 	var embedMode = /[?&]embed=1/.test(location.search);
 
-	// Embed mode: hide header and footer, clean up container padding
+	// Embed mode: simplify header (no logo, no border), hide footer
 	if (embedMode) {
-		document.querySelector('header').style.setProperty('display', 'none', 'important');
+		var headerEl = document.querySelector('header');
+		headerEl.querySelector('img').style.setProperty('display', 'none', 'important');
+		headerEl.style.setProperty('border-bottom', 'none', 'important');
+		headerEl.style.setProperty('padding-bottom', '0.5rem', 'important');
+		headerEl.style.setProperty('margin-bottom', '1rem', 'important');
 		document.querySelector('footer').style.setProperty('display', 'none', 'important');
 		document.querySelector('.container').style.setProperty('padding-top', '0', 'important');
 	}
