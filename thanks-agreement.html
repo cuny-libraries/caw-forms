@@ -27,5 +27,13 @@
 	</footer>
 </div>
 
+<script>
+if (/[?&]embed=1/.test(location.search)) {
+	var style = document.createElement('style');
+	style.textContent = 'header, footer { display: none !important; } .container { padding-top: 0 !important; }';
+	document.head.appendChild(style);
+	window.parent.postMessage({ cawIframeHeight: document.documentElement.scrollHeight }, '*');
+}
+</script>
 </body>
 </html>

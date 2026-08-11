@@ -158,6 +158,23 @@
 (function () {
 	var pageLoadTime = Date.now();
 	var titleCount = 1;
+	var embedMode = /[?&]embed=1/.test(location.search);
+
+	// Embed mode: hide header and footer, clean up container padding
+	if (embedMode) {
+		var style = document.createElement('style');
+		style.textContent = 'header, footer { display: none !important; } .container { padding-top: 0 !important; }';
+		document.head.appendChild(style);
+	}
+
+	// Send iframe height to parent so the embed script can resize the iframe
+	function sendHeight() {
+		if (embedMode) {
+			window.parent.postMessage({ cawIframeHeight: document.documentElement.scrollHeight }, '*');
+		}
+	}
+	window.addEventListener('load', sendHeight);
+	new MutationObserver(sendHeight).observe(document.body, { childList: true, subtree: true, attributes: true });
 
 	// Add another title field
 	document.getElementById('add-title').addEventListener('click', function () {
@@ -221,13 +238,14 @@
 
 		var honeypot = document.getElementById('website_url');
 		var timeOnPage = (Date.now() - pageLoadTime) / 1000;
+		var thanksUrl = 'thanks-agreement.html' + (embedMode ? '?embed=1' : '');
 		if (honeypot.value || timeOnPage < 3) {
-			window.location = 'thanks-agreement.html';
+			window.location = thanksUrl;
 			return;
 		}
 
 		fetch(form.action, { method: 'POST', mode: 'no-cors', body: new FormData(form) });
-		setTimeout(function () { window.location = 'thanks-agreement.html'; }, 500);
+		setTimeout(function () { window.location = thanksUrl; }, 500);
 	});
 })();
 </script>
