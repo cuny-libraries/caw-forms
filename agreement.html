@@ -29,6 +29,7 @@
 		     entry.1272378346   → "Email" question
 		     entry.366714702    → "Titles of Works" question
 		     entry.1045126699   → "I agree" question
+		     entry.191113412    → "Accessibility Check" question
 		-->
 
 		<iframe name="hidden_iframe" id="hidden_iframe" title="Form submission target" style="display:none;"></iframe>
@@ -115,11 +116,12 @@
 					<li>that the Work does not infringe any copyright, nor violate any proprietary rights, nor contain any libelous matter, nor invade the privacy of any person or third party;</li>
 					<li>that no right in the Work has in any way been sold, mortgaged, or otherwise disposed of, and that the Work is free from all liens and claims.</li>
 				</ul>
+				<p>I understand that in order to comply with <a href="https://www.ada.gov/resources/2024-03-08-web-rule/">federal ADA Title II requirements</a>, <a href="https://its.ny.gov/system/files/documents/2025/12/nys-p08-005-accessibility-of-information-communication-technology.pdf">New York State Information Technology Policy NYS-P08-005</a>, and <a href="https://www.cuny.edu/accessibility/statement/">CUNY policies and protocols</a>, the Work must comply with the <a href="https://www.w3.org/TR/WCAG21/">WCAG 2.1, Level AA</a> standard of accessible web content, and that in order to assist CUNY with meeting these requirements, CUNY asks me to conduct a baseline digital accessibility check of the Work prior to submission.</p>
 				<p>I understand that once a work is approved by the repository administrator, it may not be edited or removed.</p>
 				<p class="mb-0"><strong>NOTE:</strong> It is suggested that you print this page for your records.</p>
 			</div>
 
-			<div class="mb-4 form-check" id="agree-group">
+			<div class="mb-3 form-check" id="agree-group">
 				<input type="checkbox" class="form-check-input" id="agree" required aria-describedby="agree-error">
 				<label class="form-check-label" for="agree">I have read and agree to the terms above.</label>
 				<div id="agree-error" class="invalid-feedback">You must agree to the terms to submit this form.</div>
@@ -127,6 +129,15 @@
 
 			<!-- Populated by JS on submit; stores agreement confirmation in Google Sheet -->
 			<input type="hidden" id="entry.1045126699" name="entry.1045126699" value="">
+
+			<div class="mb-4 form-check" id="accessibility-group">
+				<input type="checkbox" class="form-check-input" id="accessibility-check" required aria-describedby="accessibility-error">
+				<label class="form-check-label" for="accessibility-check">I have checked my files for digital accessibility according to ADA Title II requirements.</label>
+				<div id="accessibility-error" class="invalid-feedback">You must confirm you have checked your files for accessibility.</div>
+			</div>
+
+			<!-- Populated by JS on submit; stores accessibility confirmation in Google Sheet -->
+			<input type="hidden" id="entry.191113412" name="entry.191113412" value="">
 
 			<div class="position-absolute" style="left: -9999px;" aria-hidden="true">
 				<label for="website_url">Leave this blank</label>
@@ -190,6 +201,12 @@
 		var agreeCheckbox = document.getElementById('agree');
 		if (agreeCheckbox.checked) {
 			document.getElementById('entry.1045126699').value = 'I have read and agree to the above terms.';
+		}
+
+		// Populate the hidden accessibility field if checkbox is checked
+		var accessibilityCheckbox = document.getElementById('accessibility-check');
+		if (accessibilityCheckbox.checked) {
+			document.getElementById('entry.191113412').value = 'I have checked my files for digital accessibility according to ADA Title II requirements.';
 		}
 
 		if (!form.checkValidity()) {
