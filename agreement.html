@@ -162,9 +162,9 @@
 
 	// Embed mode: hide header and footer, clean up container padding
 	if (embedMode) {
-		var style = document.createElement('style');
-		style.textContent = 'header, footer { display: none !important; } .container { padding-top: 0 !important; }';
-		document.head.appendChild(style);
+		document.querySelector('header').style.setProperty('display', 'none', 'important');
+		document.querySelector('footer').style.setProperty('display', 'none', 'important');
+		document.querySelector('.container').style.setProperty('padding-top', '0', 'important');
 	}
 
 	// Send iframe height to parent so the embed script can resize the iframe
