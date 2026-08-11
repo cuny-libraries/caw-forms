@@ -1,22 +1,12 @@
 {
-  "name": "academic-works",
+  "name": "caw-forms",
   "version": "1.0.0",
-  "description": "Feedback forms for [CUNY Academic Works](https://academicworks.cuny.edu/), an institutional repository hosted on Digital Commons. These static HTML pages are served from an Apache web server.",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+  "description": "Web forms for CUNY Academic Works — author agreements, reader benefit stories, and accessibility reports.",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/alevtina/academic-works.git"
+    "url": "git+https://github.com/cuny-libraries/caw-forms.git"
   },
-  "keywords": [],
-  "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/alevtina/academic-works/issues"
-  },
-  "homepage": "https://github.com/alevtina/academic-works#readme",
   "dependencies": {
     "@google/clasp": "^3.2.0"
   }
