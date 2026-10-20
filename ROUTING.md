@@ -26,6 +26,7 @@ Routes by the faculty member's selected CUNY affiliation.
 | Kingsborough Community College | Michael.Kirby@kbcc.cuny.edu |
 | LaGuardia Community College | ejardine@lagcc.cuny.edu |
 | Lehman College | Vanessa.ArceSenati@lehman.cuny.edu, michelle.ehrenpreis@lehman.cuny.edu |
+| Macaulay Honors College | Lisa.Brundage@mhc.cuny.edu |
 | New York City College of Technology | monica.berger11@citytech.cuny.edu |
 | Queens College | leila.walker@qc.cuny.edu |
 | Queensborough Community College | wblick@qcc.cuny.edu |
@@ -79,4 +80,4 @@ These take priority over the campus prefix when matched.
 
 ## Default
 
-Prefixes without a specific mapping (al, cl, cw, mhc, me, oaa, slu, ufs, and any unrecognized prefix) go only to **academicworks@cuny.edu**.
+Prefixes without a specific mapping (al, cl, cw, me, oaa, slu, ufs, and any unrecognized prefix) go only to **academicworks@cuny.edu**.

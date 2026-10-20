@@ -25,6 +25,7 @@ function sendFormByEmail(e) {
 		"ny":   "monica.berger11@citytech.cuny.edu", // New York City College of Technology
 		"qc":   "leila.walker@qc.cuny.edu",          // Queens College
 		"qb":   "wblick@qcc.cuny.edu",               // Queensborough Community College
+		"mhc":  "Lisa.Brundage@mhc.cuny.edu",         // Macaulay Honors College
 		"yc":   "jdiao@york.cuny.edu"                // York College
 		// al, cl, slu, me → default only (academicworks@cuny.edu); add entries here when coordinators are known
 	};
@@ -52,6 +53,7 @@ function sendFormByEmail(e) {
 		"kb":  "Kingsborough Community College",
 		"lg":  "LaGuardia Community College",
 		"le":  "Lehman College",
+		"mhc": "Macaulay Honors College",
 		"me":  "Medgar Evers College",
 		"ny":  "New York City College of Technology",
 		"qc":  "Queens College",
